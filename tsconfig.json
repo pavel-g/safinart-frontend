@@ -1,13 +1,13 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "removeComments": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "outDir": "dist"
-  },
-  "exclude": [
-    "node_modules",
-    "static"
-  ]
+    "compilerOptions": {
+        "target": "es5",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "outDir": "dist"
+    },
+    "exclude": [
+        "node_modules",
+        "static"
+    ]
 }
