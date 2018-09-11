@@ -40,6 +40,7 @@
         "mobx-react-devtools": "^4.2.15",
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
-        "semantic-ui": "^2.3.3"
+        "semantic-ui": "^2.3.3",
+        "semantic-ui-react": "^0.82.4"
     }
 }
