@@ -13,3 +13,5 @@ export class AppState {
         this.timer = 0;
     }
 }
+
+export const appState = new AppState();
