@@ -10,10 +10,12 @@ import 'semantic-ui-css/semantic.min.css';
 class TimerView extends React.Component<{appState: AppState}, {}> {
     render() {
         return (
-            <div>
-                <SUI.Button onClick={this.onReset}>
-                    Seconds passed: {this.props.appState.timer}
-                </SUI.Button>
+            <div className="pusher">
+                <div className="full height">
+                    <SUI.Button onClick={this.onReset}>
+                        Seconds passed: {this.props.appState.timer}
+                    </SUI.Button>
+                </div>
                 <DevTools />
             </div>
         );
