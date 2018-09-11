@@ -16,14 +16,24 @@ module.exports = {
         extensions: ['.js', '.ts', '.tsx']
     },
     module: {
-        loaders: [{
-            test: /\.tsx?$/,
-            use: [
-                {
-                    loader: "awesome-typescript-loader"
-                },
-            ],
-            include: path.join(__dirname, 'src')
-        }]
+        loaders: [
+            {
+                test: /\.tsx?$/,
+                use: [
+                    {
+                        loader: "awesome-typescript-loader"
+                    },
+                ],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ],
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
+            }
+        ],
     }
 };
