@@ -19,11 +19,11 @@ class TimerView extends React.Component<{appState: AppState}, {}> {
                 <DevTools />
             </div>
         );
-     }
+    }
 
-     onReset = () => {
-         this.props.appState.resetTimer();
-     }
+    onReset = () => {
+        this.props.appState.resetTimer();
+    }
 };
 
 ReactDOM.render(<TimerView appState={appState} />, document.getElementById('root'));
