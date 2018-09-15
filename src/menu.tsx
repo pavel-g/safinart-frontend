@@ -5,10 +5,7 @@ export class Menu extends React.Component {
     
     render() {
         return (
-            <SUI.List>
-                <SUI.List.Content>
-                    <h1>Safinart</h1>
-                </SUI.List.Content>
+            <div>
                 <SUI.List.Content>
                     <a href="">About me</a>
                 </SUI.List.Content>
@@ -21,7 +18,7 @@ export class Menu extends React.Component {
                 <SUI.List.Content>
                     <a href="https://livemaster.ru">Livemaster</a>
                 </SUI.List.Content>
-            </SUI.List>
+            </div>
         );
     }
     

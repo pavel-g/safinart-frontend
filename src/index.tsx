@@ -5,7 +5,7 @@ import DevTools from 'mobx-react-devtools';
 import { appState, AppState } from './app-state';
 import * as SUI from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Menu } from './menu';
+import { Sidebar } from './sidebar';
 
 @observer
 class SafinartMain extends React.Component<{appState: AppState}, {}> {
@@ -14,7 +14,7 @@ class SafinartMain extends React.Component<{appState: AppState}, {}> {
             <div>
                 <SUI.Grid padded style={{height: '100%'}}>
                     <SUI.Grid.Column width={3}>
-                        <Menu></Menu>
+                        <Sidebar></Sidebar>
                     </SUI.Grid.Column>
                     <SUI.Grid.Column width={13}>
                         <SUI.Button onClick={this.onReset}>
