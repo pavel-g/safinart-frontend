@@ -3,25 +3,18 @@ import * as ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import { appState, AppState } from './app-state';
-import * as SUI from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
-import { Sidebar } from './sidebar';
+import styled from 'styled-components';
+
+const Section = styled.section`
+    color: white;
+`;
 
 @observer
 class SafinartMain extends React.Component<{appState: AppState}, {}> {
     render() {
         return (
             <div>
-                <SUI.Grid padded style={{height: '100%'}}>
-                    <SUI.Grid.Column width={3}>
-                        <Sidebar></Sidebar>
-                    </SUI.Grid.Column>
-                    <SUI.Grid.Column width={13}>
-                        <SUI.Button onClick={this.onReset}>
-                            Seconds passed: {this.props.appState.timer}
-                        </SUI.Button>
-                    </SUI.Grid.Column>
-                </SUI.Grid>
+                {/* <FullScreen></FullScreen> */}
                 <DevTools />
             </div>
         );

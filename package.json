@@ -1,51 +1,38 @@
 {
-    "name": "mobx-react-typescript-boilerplate",
-    "version": "1.0.0",
-    "description": "Boilerplate for MobX + React project with Typescript, ES6 compilation and hot code reloading",
+    "name": "safinart",
+    "version": "0.0.1",
     "scripts": {
-        "start": "node server.js"
+        "start": "node_modules/.bin/webpack-dev-server"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mobxjs/mobx-react-typescript-boilerplate.git"
-    },
-    "keywords": [
-        "react",
-        "reactjs",
-        "boilerplate",
-        "mobx",
-        "starter-kit"
-    ],
-    "author": "Michel Weststrate <mweststrate@gmail.com> (http://github.com/mweststrate)",
+    "author": "Gnedov Pavel <pavel@gnedov.info>",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mobxjs/mobx/issues"
-    },
-    "homepage": "http://mobxjs.github.com/mobx",
+    "homepage": "https://safinart.net",
     "devDependencies": {
         "@types/leaflet": "^1.2.11",
-        "@types/react": "^15.0.39",
-        "@types/react-dom": "^15.5.1",
+        "@types/react": "^16.4.14",
+        "@types/react-dom": "^16.0.7",
         "@types/semantic-ui": "^2.2.6",
-        "awesome-typescript-loader": "^3.2.1",
+        "awesome-typescript-loader": "^5.2.1",
         "css-loader": "^1.0.0",
         "file-loader": "^2.0.0",
         "style-loader": "^0.23.0",
-        "typescript": "^2.4.2",
+        "typescript": "^2.9.2",
         "url-loader": "^1.1.1",
-        "webpack": "^3.0.0",
-        "webpack-dev-server": "^2.6.1"
+        "webpack": "^4.19.0",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.8"
     },
     "dependencies": {
         "axios": "^0.19.0-beta.1",
         "leaflet": "^1.3.4",
-        "mobx": "^3.2.1",
-        "mobx-react": "^4.2.2",
-        "mobx-react-devtools": "^4.2.15",
-        "react": "^15.6.1",
-        "react-dom": "^15.6.1",
+        "mobx": "^5.1.1",
+        "mobx-react": "^5.2.8",
+        "mobx-react-devtools": "^6.0.3",
+        "react": "^16.5.1",
+        "react-dom": "^16.5.1",
         "semantic-ui": "^2.3.3",
         "semantic-ui-css": "^2.3.3",
-        "semantic-ui-react": "^0.82.4"
+        "semantic-ui-react": "^0.82.4",
+        "styled-components": "^4.0.0-beta.5"
     }
 }

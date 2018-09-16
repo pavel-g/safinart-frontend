@@ -1,30 +1,24 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'eval',
-    entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        './src/index'
-    ],
+    mode: 'development',
+    devtool: 'source-map',
+    entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
+        filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx']
+        extensions: ['.js', '.ts', '.tsx', '.css']
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.tsx?$/,
-                use: [
-                    {
-                        loader: "awesome-typescript-loader"
-                    },
-                ],
-                include: path.join(__dirname, 'src')
+                test: /\.(tsx|ts)?$/,
+                use: 'awesome-typescript-loader',
+                include: [
+                    path.resolve(__dirname, 'src')
+                ]
             },
             {
                 test: /\.css$/,
@@ -34,6 +28,12 @@ module.exports = {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
                 loader: 'url-loader?limit=100000'
             }
-        ],
+        ]
+    },
+    devServer: {
+        publicPath: '/static/',
+        compress: true,
+        port: 3000,
+        index: 'index.html'
     }
 };
