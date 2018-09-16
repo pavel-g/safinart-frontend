@@ -7,8 +7,7 @@ export interface ContentProps {
 
 export const DivContent = styled.div`
     height: 100%;
-    padding-left: ${(props: ContentProps) => props.sidebarSize};
-    border: 1px solid #000000;
+    margin-left: ${(props: ContentProps) => props.sidebarSize};
 `;
 
 export class Content extends React.Component {
