@@ -3,18 +3,14 @@ import * as ReactDOM from 'react-dom';
 import {observer} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import { appState, AppState } from './app-state';
-import styled from 'styled-components';
-
-const Section = styled.section`
-    color: white;
-`;
+import { Sidebar } from './sidebar';
 
 @observer
 class SafinartMain extends React.Component<{appState: AppState}, {}> {
     render() {
         return (
             <div>
-                {/* <FullScreen></FullScreen> */}
+                <Sidebar width="160px"/>
                 <DevTools />
             </div>
         );
