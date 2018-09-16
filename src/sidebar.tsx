@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { Menu } from './menu'
 import styled from 'styled-components';
+import { Content } from './content';
+
+export interface SidebarProps {
+    sidebarSize: string
+};
 
 export const DivSidebar = styled.div`
     height: 100%;
-    width: ${props => props.width};
+    width: ${(props: SidebarProps) => props.sidebarSize};
     position: fixed;
     z-index: 1;
     top: 0;
@@ -19,14 +24,17 @@ export const DivSidebar = styled.div`
 
 export class Sidebar extends React.Component {
     
-    props: {width: string}
+    props: SidebarProps;
     
     render() {
         return (
-            <DivSidebar width={this.props.width}>
-                <h1>Safinart</h1>
-                <Menu></Menu>
-            </DivSidebar>
+            <div>
+                <DivSidebar sidebarSize={this.props.sidebarSize}>
+                    <h1>Safinart</h1>
+                    <Menu></Menu>
+                </DivSidebar>
+                <Content sidebarSize={this.props.sidebarSize}></Content>
+            </div>
         );
     }
     
