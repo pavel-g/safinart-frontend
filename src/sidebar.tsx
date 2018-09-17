@@ -28,6 +28,10 @@ export const DivSidebar = styled.div`
     @media screen and (max-width: 1024px) {
         height: ${(props: SidebarProps) => props.titlebarSize};
         width: 100%;
+        
+        h1 {
+            float: left;
+        }
     }
 `;
 
@@ -40,7 +44,7 @@ export class Sidebar extends React.Component {
             <div>
                 <DivSidebar sidebarSize={this.props.sidebarSize} titlebarSize={this.props.titlebarSize}>
                     <h1>Safinart</h1>
-                    <Menu></Menu>
+                    <Menu titlebarSize={this.props.titlebarSize}></Menu>
                 </DivSidebar>
             </div>
         );

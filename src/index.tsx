@@ -13,7 +13,7 @@ class SafinartMain extends React.Component<{appState: AppState}, {}> {
             <div>
                 <Sidebar sidebarSize="160px" titlebarSize="40px"/>
                 <Content sidebarSize="160px" titlebarSize="40px"></Content>
-                <DevTools />
+                {/* <DevTools /> */}
             </div>
         );
     }
