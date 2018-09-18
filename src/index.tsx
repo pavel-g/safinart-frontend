@@ -11,8 +11,8 @@ class SafinartMain extends React.Component<{appState: AppState}, {}> {
     render() {
         return (
             <div>
-                <Sidebar sidebarSize="160px" titlebarSize="40px"/>
-                <Content sidebarSize="160px" titlebarSize="40px"></Content>
+                <Sidebar/>
+                <Content></Content>
                 {/* <DevTools /> */}
             </div>
         );

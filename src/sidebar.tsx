@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { Menu } from './menu'
 import styled from 'styled-components';
-
-export interface SidebarProps {
-    sidebarSize: string;
-    titlebarSize: string;
-};
+import { Sizes } from './sizes';
 
 export const DivSidebar = styled.div`
     position: fixed;
@@ -22,11 +18,11 @@ export const DivSidebar = styled.div`
     
     @media screen and (min-width: 1024px) {
         height: 100%;
-        width: ${(props: SidebarProps) => props.sidebarSize};
+        width: ${Sizes.SIDEBAR_WIDTH};
     }
     
     @media screen and (max-width: 1024px) {
-        height: ${(props: SidebarProps) => props.titlebarSize};
+        height: ${Sizes.TITLEBAR_HEIGHT};
         width: 100%;
         
         h1 {
@@ -37,14 +33,12 @@ export const DivSidebar = styled.div`
 
 export class Sidebar extends React.Component {
     
-    props: SidebarProps;
-    
     render() {
         return (
             <div>
-                <DivSidebar sidebarSize={this.props.sidebarSize} titlebarSize={this.props.titlebarSize}>
+                <DivSidebar>
                     <h1>Safinart</h1>
-                    <Menu titlebarSize={this.props.titlebarSize}></Menu>
+                    <Menu></Menu>
                 </DivSidebar>
             </div>
         );

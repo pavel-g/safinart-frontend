@@ -1,12 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Sizes } from './sizes';
 
 export interface MenuState {
     menuVisible: boolean;
-};
-
-export interface MenuProps {
-    titlebarSize: string;
 };
 
 export const DivMenu = styled.div``;
@@ -20,7 +17,7 @@ export const DivMenuContent = styled.div`
     @media screen and (max-width: 1024px) {
         display: ${(props: MenuState) => {return (props.menuVisible ? 'block' : 'none')}};
         position: fixed;
-        top: ${(props: MenuProps) => {return props.titlebarSize}};
+        top: ${Sizes.TITLEBAR_HEIGHT};
         width: 100%;
     }
 `;
@@ -42,8 +39,6 @@ export class Menu extends React.Component {
     
     state: MenuState;
     
-    props: MenuProps;
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -55,7 +50,7 @@ export class Menu extends React.Component {
         return (
             <DivMenu>
                 <DivMenuButton onClick={this.onMenuClick.bind(this)}>Menu</DivMenuButton>
-                <DivMenuContent menuVisible={this.state.menuVisible} titlebarSize={this.props.titlebarSize}>
+                <DivMenuContent menuVisible={this.state.menuVisible}>
                     <p><a href="">About me</a></p>
                     <p><a href="https://vk.com">VK</a></p>
                     <p><a href="https://etsy.com">Etsy</a></p>
