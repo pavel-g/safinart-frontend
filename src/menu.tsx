@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Sizes } from './sizes';
+import { Link } from 'react-router-dom';
 
 export interface MenuState {
     menuVisible: boolean;
@@ -51,7 +52,7 @@ export class Menu extends React.Component {
             <DivMenu>
                 <DivMenuButton onClick={this.onMenuClick.bind(this)}>Menu</DivMenuButton>
                 <DivMenuContent menuVisible={this.state.menuVisible}>
-                    <p><a href="">About me</a></p>
+                    <p><Link to="/about">About me</Link></p>
                     <p><a href="https://vk.com">VK</a></p>
                     <p><a href="https://etsy.com">Etsy</a></p>
                     <p><a href="https://livemaster.ru">Livemaster</a></p>

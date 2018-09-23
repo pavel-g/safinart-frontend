@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Menu } from './menu'
 import styled from 'styled-components';
 import { Sizes } from './sizes';
+import { Link } from 'react-router-dom';
 
 export const DivSidebar = styled.div`
     position: fixed;
@@ -37,7 +38,7 @@ export class Sidebar extends React.Component {
         return (
             <div>
                 <DivSidebar>
-                    <h1>Safinart</h1>
+                    <Link to="/"><h1>Safinart</h1></Link>
                     <Menu></Menu>
                 </DivSidebar>
             </div>

@@ -31,10 +31,10 @@ module.exports = {
         ]
     },
     devServer: {
-        publicPath: '/static/',
-        contentBase: path.join(__dirname, 'public'),
+        publicPath: '/',
         compress: true,
         port: 3000,
-        index: 'index.html'
+        index: 'index.html',
+        historyApiFallback: true
     }
 };
