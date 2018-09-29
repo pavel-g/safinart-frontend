@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Sizes } from './sizes';
 import { About } from './about';
 import { Route } from 'react-router-dom';
+import { MainContent } from './main-content';
 
 export const DivContent = styled.div`
     @media screen and (min-width: 1024px) {
@@ -21,6 +22,7 @@ export class Content extends React.Component {
     render() {
         return (
             <DivContent>
+                <Route exact path="/" component={MainContent}></Route>
                 <Route path="/about" component={About}></Route>
             </DivContent>
         );

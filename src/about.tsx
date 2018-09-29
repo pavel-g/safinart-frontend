@@ -17,7 +17,7 @@ export class About extends React.Component {
     }
     
     async loadData() {
-        const resp = await Axios.get('public/about.md');
+        const resp = await Axios.get('/about.md');
         this.setState({content: resp.data});
     }
     
