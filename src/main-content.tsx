@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Map } from './map';
 
 export enum MainContentModes {
     MAP = 'MAP',
@@ -28,14 +29,10 @@ export class MainContent extends React.Component {
             );
         } else {
             component = (
-                <div>Карта</div>
+                <Map></Map>
             );
         }
-        return (
-            <div>
-                {component}
-            </div>
-        );
+        return component;
     }
     
 }
