@@ -25,7 +25,7 @@ export class Map extends React.Component {
         
         if (!this.osm) {
             this.osm = new Leaflet.TileLayer(this.osmUrl, {attribution: this.osmAttrib});
-            this.map.setView(new Leaflet.LatLng(51.3, 0.7), 9);
+            this.map.setView(new Leaflet.LatLng(0, 0), 2);
             this.map.addLayer(this.osm);
         }
     }
