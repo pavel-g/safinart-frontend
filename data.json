@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "title": "Matreshka 1",
+        "images": {
+            "orig": "images/0001.jpg",
+            "min": "images/0001-min.jpg"
+        },
+        "pos": {
+            "lat": 0,
+            "lon": 0
+        }
+    },
+    {
+        "id": 1,
+        "title": "Matreshka 2",
+        "images": {
+            "orig": "images/0001.jpg",
+            "min": "images/0001-min.jpg"
+        },
+        "pos": {
+            "lat": 50,
+            "lon": 50
+        }
+    },
+    {
+        "id": 2,
+        "title": "Matreshka 3",
+        "images": {
+            "orig": "images/0001.jpg",
+            "min": "images/0001-min.jpg"
+        },
+        "pos": {
+            "lat": -50,
+            "lon": -50
+        }
+    }
+]
