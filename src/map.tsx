@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 import { Model } from './model';
 import Axios from 'axios';
+import { mapParams, MapParams } from './map-params';
 
 export const DivMap = styled.div`
     height: 100%;
@@ -33,6 +34,13 @@ export class Map extends React.Component {
     
     data: Model[] = [];
     
+    mapParams: MapParams;
+    
+    constructor(props) {
+        super(props);
+        this.mapParams = mapParams;
+    }
+    
     async initLeaflet(): Promise<void> {
         if (!this.map) {
             this.map = Leaflet.map(MAP_ID);
@@ -40,9 +48,11 @@ export class Map extends React.Component {
         
         if (!this.osm) {
             this.osm = new Leaflet.TileLayer(this.osmUrl, {attribution: this.osmAttrib});
-            this.map.setView(new Leaflet.LatLng(0, 0), 2);
+            this.map.setView(this.mapParams.pos, this.mapParams.zoom);
             this.map.addLayer(this.osm);
         }
+        
+        this.initListeners();
         
         const data = await this.loadData();
         
@@ -67,6 +77,15 @@ export class Map extends React.Component {
         return (
             <DivMap id={MAP_ID}></DivMap>
         );
+    }
+    
+    protected initListeners(): void {
+        this.map.on('zoomend', () => {
+            this.mapParams.zoom = this.map.getZoom();
+        });
+        this.map.on('moveend', () => {
+            this.mapParams.pos = this.map.getCenter();
+        });
     }
     
 }
