@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export const DivSidebar = styled.div`
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     top: 0;
     left: 0;
     background-color: #FFFFFF;
