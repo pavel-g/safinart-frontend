@@ -1,0 +1,10 @@
+export interface LinkInterface {
+    name: string;
+    dist: string;
+}
+
+export const Links: LinkInterface[] = [
+    { name: 'VK', dist: 'https://vk.com' },
+    { name: 'Etsy', dist: 'https://etsy.com' },
+    { name: 'Livemaster', dist: 'https://livemaster.ru' }
+];
