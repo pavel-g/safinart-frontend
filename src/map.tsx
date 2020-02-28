@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Model } from './model';
 import Axios from 'axios';
 import { mapParams, MapParams } from './map-params';
+import { Config } from './config';
 
 export const DivMap = styled.div`
     height: 100%;
@@ -67,7 +68,7 @@ export class Map extends React.Component {
         if (this.data.length > 0) {
             return this.data;
         }
-        const resp = await Axios.get('data.json');
+        const resp = await Axios.get(this.getUrl());
         this.data = resp.data.map((item) => new Model(item));
         return this.data;
     }
@@ -86,6 +87,10 @@ export class Map extends React.Component {
         this.map.on('moveend', () => {
             this.mapParams.pos = this.map.getCenter();
         });
+    }
+    
+    protected getUrl(): string {
+        return Config.apiUrl + '/list';
     }
     
 }

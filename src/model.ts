@@ -1,4 +1,5 @@
 import { Marker, marker, LatLng, Popup, popup } from 'leaflet';
+import { Config } from './config';
 
 export class Model {
     id: number;
@@ -29,7 +30,12 @@ export class Model {
     
     createPopup(): Popup {
         const p = popup();
-        p.setContent(`<img src="${this.images.min}"><span>${this.title}</span>`);
+        const imgUrl = this.getPreviewImageUrl(this.images.orig);
+        p.setContent(`<img src="${imgUrl}"><span>${this.title}</span>`);
         return p;
+    }
+    
+    protected getPreviewImageUrl(name: string): string {
+        return Config.imagesPreviewUrl + '/' + name;
     }
 }

@@ -1,0 +1,5 @@
+export const Config = {
+	apiUrl: 'http://localhost:8080/api',
+	imagesUrl: 'http://localhost:8080/api/images',
+	imagesPreviewUrl: 'http://localhost:8080/api/images_preview'
+};
