@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Axios from 'axios';
-import * as ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 
 export class About extends React.Component {
     

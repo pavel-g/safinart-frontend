@@ -3,6 +3,7 @@ import { Menu } from './menu'
 import styled from 'styled-components';
 import { Sizes } from './sizes';
 import { Link } from 'react-router-dom';
+import { LoginLabel } from './components/login-label';
 
 export const DivSidebar = styled.div`
     position: fixed;
@@ -40,6 +41,7 @@ export class Sidebar extends React.Component {
                 <DivSidebar>
                     <Link to="/"><h1>Safinart</h1></Link>
                     <Menu></Menu>
+                    <LoginLabel></LoginLabel>
                 </DivSidebar>
             </div>
         );

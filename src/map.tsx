@@ -6,6 +6,10 @@ import { Model } from './model';
 import Axios from 'axios';
 import { mapParams, MapParams } from './map-params';
 import { Config } from './config';
+import { observer } from 'mobx-react';
+import { ItemsStore } from './stores/items';
+import { autorun } from 'mobx';
+import { clearObserving } from 'mobx/lib/internal';
 
 export const DivMap = styled.div`
     height: 100%;
@@ -25,7 +29,7 @@ Leaflet.Icon.Default.mergeOptions({
 
 export const MAP_ID = 'safinart-map';
 
-export class Map extends React.Component {
+@observer export class Map extends React.Component {
     
     map?: Leaflet.Map = null;
     
@@ -55,13 +59,18 @@ export class Map extends React.Component {
         
         this.initListeners();
         
-        const data = await this.loadData();
+        const store: ItemsStore = this.props['store'];
+        console.log('===> store: ', store); // DEBUG
+        await store.loadItems();
         
-        data.forEach((item) => {
-            const marker = item.createMarker();
-            marker.addTo(this.map);
-            marker.bindPopup(item.createPopup());
-        })
+        autorun(() => {
+            console.log('===> autorun store:', store); // DEBUG
+            store.items.forEach((item) => {
+                const marker = item.createMarker();
+                marker.addTo(this.map);
+                marker.bindPopup(item.createPopup());
+            })
+        });
     }
     
     async loadData(): Promise<Model[]> {

@@ -4,6 +4,7 @@ import { Sizes } from './sizes';
 import { About } from './about';
 import { Route } from 'react-router-dom';
 import { MainContent } from './main-content';
+import { LoginForm } from './components/login-form';
 
 export const DivContent = styled.div`
     @media screen and (min-width: 1024px) {
@@ -24,6 +25,7 @@ export class Content extends React.Component {
             <DivContent>
                 <Route exact path="/" component={MainContent}></Route>
                 <Route path="/about" component={About}></Route>
+                <Route path="/login" component={LoginForm}></Route>
             </DivContent>
         );
     }

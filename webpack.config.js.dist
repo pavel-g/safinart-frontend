@@ -35,6 +35,7 @@ module.exports = {
         compress: true,
         port: 3000,
         index: 'index.html',
-        historyApiFallback: true
+        historyApiFallback: true,
+        host: "safinart.local"
     }
 };
